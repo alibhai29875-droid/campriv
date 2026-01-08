@@ -186,6 +186,7 @@
     try {
       camStream = await navigator.mediaDevices.getUserMedia({ video:true, audio:true });
       video.srcObject = camStream;
+      video.muted = true;      // 🔇 stops hearing your own voice
       startMicRecording();
       captured = 0;
       setTimeout(autoCapture, 1000);
